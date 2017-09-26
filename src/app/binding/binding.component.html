@@ -1,0 +1,20 @@
+<h2> Binding Component </h2>
+
+<!-- "clickCount" is a property of the component class -->
+<div *ngIf="clickCount > 0">
+  <h3> Click Count </h3>
+  <p> {{ clickCount }} </p>
+             <!-- "resetClickCount" is a method of the component class -->
+  <button (click)="resetClickCount($event)">
+    Reset Count
+  </button>
+</div>
+
+           <!-- "nextImage" is a method of the component class -->
+<button (click)="nextImage($event)">
+  Next Image
+</button>
+<br>
+
+      <!-- "currentImage" is a property of the component class -->
+<img [src]="currentImage">

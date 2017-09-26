@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AdsComponent } from './ads/ads.component';
+import { BindingComponent } from './binding/binding.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdsComponent
+    AdsComponent,
+    BindingComponent
   ],
   imports: [
     BrowserModule
