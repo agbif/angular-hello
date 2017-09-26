@@ -1,0 +1,64 @@
+<h3> Input Bindings </h3>
+
+<label for="name-input">Please type your name:</label>
+<input  id="name-input" type="text" placeholder="Izzy Ironside"
+    name="username" [(ngModel)]="theName">
+              <!-- connected to "theName" class property -->
+
+<div *ngIf="theName">
+
+  <p>
+    Hello, {{ theName }}!
+  </p>
+
+  <label   for="message-input"> What's on your mind? </label>
+  <textarea id="message-input" placeholder="I like pizza"
+      name="usertext" [(ngModel)]="messageText"></textarea>
+
+  <button *ngIf="isClean()">
+    Submit
+  </button>
+
+<!-- =========================================== -->
+
+  <h3> Preview a Product </h3>
+
+  <label for="product-name"> Product Name </label>
+  <input  id="product-name" type="text" placeholder="Oculus Rift"
+      name="productName" [(ngModel)]="theProduct.name">
+  <br>
+
+  <label for="product-price"> Product Price </label>
+  <input  id="product-price" type="number" step="0.01" placeholder="500"
+      name="productPrice" [(ngModel)]="theProduct.price">
+  <br>
+
+  <label for="product-image"> Product Image URL </label>
+  <input  id="product-image" type="text" placeholder="example.com/product.gif"
+      name="productImage" [(ngModel)]="theProduct.imageUrl">
+
+  <div class="product-preview">
+    <h4> {{ theProduct.name }} </h4>
+
+    <p> Price: ${{ theProduct.price }}</p>
+
+    <img [src]="theProduct.imageUrl">
+  </div>
+
+<!-- =========================================== -->
+
+  <h3> Select a food </h3>
+
+  <p *ngIf="foodReaction"> {{ foodReaction }} </p>
+
+  <select name="food-dropdown" [(ngModel)]="foodSelection"
+      (change)="changeReaction()">
+    <option value=""> </option>
+    <option value="pizza"> Pizza </option>
+    <option value="urchin"> Sea Urchin </option>
+    <option value="burgers"> Burgers </option>
+    <option value="anchovies"> Anchovies </option>
+    <option value="soup"> Pea Soup </option>
+    <option value="sprouts"> Brussel Sprouts </option>
+  </select>
+</div>

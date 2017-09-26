@@ -36,7 +36,7 @@ export class BindingComponent implements OnInit {
 
       // "currentImage" is bound to the HTML so if it changes, the HTML changes too.
       this.currentImage = this.images[this.index];
-  }
+  } // close nextImage()
 
   resetClickCount(myEvent) {
       this.clickCount = 0;
